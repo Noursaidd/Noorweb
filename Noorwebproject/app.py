@@ -1,10 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-        return 'Hello, Noor web app!'
+@application.route('/')
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-        app.run(debug=True)
+    application.run(debug=True)
+
+
+## In python, they updated the app to application then app. is not accepted anymore ;)
